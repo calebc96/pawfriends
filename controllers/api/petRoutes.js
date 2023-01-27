@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     name: req.body.name,
     location: req.body.location,
     description: req.body.size,
+    size: req.body.size,
     age: req.body.age,
     breed: req.body.breed,
     });

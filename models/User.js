@@ -38,7 +38,7 @@ User.init(
     phone_number: {
       type: DataTypes.STRING,
       validate: {
-          isPhoneNumber: true
+        len: [10, 10]
       }
     }
   },

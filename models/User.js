@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    phone_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   },
   {
     hooks: {

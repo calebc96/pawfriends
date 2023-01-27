@@ -13,10 +13,13 @@ Pet.belongsTo(User, {
 });
 
 Pet.hasMany(Tag, {
-    foreignKey: 'tag_id',
-    onDelete: 'CACADE'
-});
+    foreignKey: 'tag_id'
+    onDelete: 'CASCADE'
+})
 
 Tag.belongsTo(Pet, {
     foreignKey: 'tag_id'
-});
+})
+
+module.exports = { User, Tag, Pet};
+

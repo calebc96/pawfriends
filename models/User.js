@@ -36,8 +36,10 @@ User.init(
       },
     },
     phone_number: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.STRING,
+      validate: {
+        len: [10, 10]
+      }
     }
   },
   {

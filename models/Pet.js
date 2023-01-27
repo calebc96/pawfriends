@@ -32,7 +32,7 @@ Pet.init(
             allowNull: false
         },
         breed: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         tag_ids: {

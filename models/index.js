@@ -13,7 +13,7 @@ Pet.belongsTo(User, {
 });
 
 Pet.hasMany(Tag, {
-    foreignKey: 'tag_id',
+    foreignKey: 'tag_id'
     onDelete: 'CASCADE'
 })
 
@@ -22,3 +22,4 @@ Tag.belongsTo(Pet, {
 })
 
 module.exports = { User, Tag, Pet};
+

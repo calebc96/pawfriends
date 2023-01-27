@@ -14,7 +14,7 @@ Pet.belongsTo(User, {
 
 Pet.hasMany(Tag, {
     foreignKey: 'tag_id',
-    onDelete: 'CACADE'
+    onDelete: 'CASCADE'
 })
 
 Tag.belongsTo(Pet, {

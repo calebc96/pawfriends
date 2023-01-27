@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Max",
+    "location": "New York City",
+    "description": "Max is a friendly and playful Labrador Retriever. He loves to go for walks and play fetch.",
+    "size": "large",
+    "age": 3,
+    "breed": "dog",
+    "tags": [1, 2, 3],
+    "user_id": 1
+  }
+]

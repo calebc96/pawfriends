@@ -20,3 +20,5 @@ Pet.hasMany(Tag, {
 Tag.belongsTo(Pet, {
     foreignKey: 'tag_id'
 })
+
+module.exports = { User, Tag, Pet};

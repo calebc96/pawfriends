@@ -15,8 +15,8 @@ Pet.belongsTo(User, {
 Pet.hasMany(Tag, {
     foreignKey: 'tag_id',
     onDelete: 'CACADE'
-})
+});
 
 Tag.belongsTo(Pet, {
     foreignKey: 'tag_id'
-})
+});

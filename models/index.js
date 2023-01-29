@@ -22,3 +22,4 @@ Tag.belongsTo(Pet, {
 })
 
 module.exports = { User, Tag, Pet};
+

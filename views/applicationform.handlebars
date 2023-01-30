@@ -1,43 +1,74 @@
-<form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-      </div>
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Adoption Form</p>
+
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-4 col-form-label">🐾Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control petname" id="petname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Location</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control petlocation" id="petlocation">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">🐾Description</label>
+                                            <textarea class="form-control petdesc" id="petdesc" rows="2"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Size</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control petsize" id="petsize"
+                                                placeholder="S/M/L">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Age</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control petage" id="petage">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Breed</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control petbreed" id="petbreed">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-secondary">Submit </button>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="./Images/adoptme.webp" class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-      <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-  
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
+</section>

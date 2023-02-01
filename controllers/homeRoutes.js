@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const { Pet, User } = require('../models');
 
+const withAuth = require('../utils/auth');
+module.exports = router;
 
-router.get('/', async (req, res) => {
+
+router.get('/', withAuth, async (req, res) => {
     try {
         const petData = await Pet.findAll({
             include: [
@@ -23,6 +26,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/homepage');
+      return;
+    }
+  
+    res.render('signup');
+  });
+  
+  
+
 // router.get('/applicationform', (req,res) => {
 //     try {
 //         res.render('applicationform');
@@ -30,13 +46,8 @@ router.get('/', async (req, res) => {
 //         res.status(500).json(err);
 //     }
 // });
-router.get('/login', async (req,res) => {
-    try {
-        res.render('signup');
-    } catch(err) {
-        res.status(500).json(err);
-    }
-});
+
 
 
 module.exports = router;
+

@@ -23,4 +23,28 @@ router.get('/page', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const picData = await Picture.create({
+            pet_picture: pet_picture,
+            pet_id: pet_id
+        });
+        res.json(picData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+      const picData = await Picture.destroy({
+        where: {
+          id: req.params.id
+        }
+      });
+      res.json(picData);
+    } catch (err){
+      res.status(500).json(err);
+  }});
+
 module.exports = router;

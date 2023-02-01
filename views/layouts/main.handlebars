@@ -136,7 +136,8 @@
       <a class="text-reset fw-bold" href="#">Pet Adoption</a>
     </div>
   </footer>
- 
-  <script src="/js/login.js"></script>
-<script src="./js/logout.js"></script>
+
+{{#if logged_in}}
+  <script src="./js/logout.js"></script>
+{{/if}}
 </html>

@@ -30,6 +30,8 @@ async function newFormHandler(event) {
     } else {
       alert('Failed to add pet');
     }
+
+    
   }
   
   document.querySelector('.new-pet-form').addEventListener('submit', newFormHandler);

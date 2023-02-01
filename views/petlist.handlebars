@@ -1,13 +1,20 @@
-{{!-- {{#each pets as |pet| }} --}}
+{{#each pets as |pet| }}
 
 <div class="card" style="width: 18rem;">
   <img src="https://freight.qantas.com/images/pets/GettyImages-764782285.jpg" id="img">
   <div class="card-body">
-    <h5 class="card-title">Pet Name</h5>
-    <p class="card-text">Some quick example text to show information about the pet</p>
-    <a href="#" class="btn btn-primary">See Details!</a>
+    <h5 class="card-title">{{pet.name}}</h5>
+    <p class="card-text">
+      <ul>🐾Description: {{pet.description}}</ul>
+      <ul>🐾Size: {{pet.size}}</ul>
+       <ul>🐾Age: {{pet.age}}</ul>
+      <ul>🐾Breed: {{pet.breed}}</ul>
+      <ul>🐾Location:{{pet.location}}</ul>
+    </p>
+    <a href="/api/pet/{{pet.id}}" class="btn btn-primary">See Details!</a>
   </div>
 </div>
 
-{{!-- 
-{{/each}} --}}
+
+{{/each}}
+

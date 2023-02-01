@@ -23,9 +23,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+// router.get('/applicationform', (req,res) => {
+//     try {
+//         res.render('applicationform');
+//     } catch(err) {
+//         res.status(500).json(err);
+//     }
+// });
 router.get('/login', async (req,res) => {
     try {
-        res.render('homepage');
+        res.render('signup');
     } catch(err) {
         res.status(500).json(err);
     }

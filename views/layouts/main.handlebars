@@ -13,6 +13,8 @@
 
 <body>
   <!-- NAV BAR -->
+   {{#if logged_in}}
+      
   <nav class="navbar navbar-expand-lg navbar-light bg-light border p-10">
     <h2 class="navbar-brand" href="/">PET ADOPTION</h2>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,7 +29,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Meet Our Team</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="firstpage" id="logout">logout</a>
+        </li>
+      
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -35,7 +40,32 @@
       </form>
     </div>
   </nav>
- 
+ {{else}}
+ <nav class="navbar navbar-expand-lg navbar-light bg-light border p-10">
+    <h2 class="navbar-brand" href="/">PET ADOPTION</h2>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link Lead" href="/">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link Lead" href="/">Pet Adoption Form</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/">Meet Our Team</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/login" id="login">Login</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  {{/if}}
     <main>
       {{{body}}}
     </main>

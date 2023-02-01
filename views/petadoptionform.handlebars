@@ -1,0 +1,145 @@
+{{!-- <section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                             <div class='add-pet-container'>
+    <h2>
+      Pet Submission form
+    </h2>
+    <form class='new-pet-form'>
+      <label for='name'>
+        Pet 🐾Name:
+      </label>
+      <br />
+      <textarea id='pet_name' name='pet_name' rows='2' cols='30'>
+        {{name}}
+      </textarea>
+      <br />
+      <label for='location'>
+        Pet location:
+      </label>
+      <br />
+      <textarea id='pet_location' name='pet_location' rows='5' cols='30'>
+        {{location}}
+      </textarea>
+      <br />
+      <label for='description'>
+        Pet description:
+      </label>
+      <br />
+      <textarea id='pet_description' name='pet_description' rows='2' cols='30'>
+        {{description}}
+      </textarea>
+      <br />
+      <label for='size'>
+        Pet size:
+      </label>
+      <br />
+      <textarea id='pet_size' name='pet_size' rows='5' cols='30'>
+        {{size}}
+      </textarea>
+      <br />
+      <label for='age'>
+        Pet's age:
+      </label>
+      <br />
+      <textarea id='pet_age' name='pet_age' rows='2' cols='30'>
+        {{age}}
+      </textarea>
+      <br />
+      <label for='breed'>
+        Pet's breed:
+      </label>
+      <br />
+      <textarea id='pet_breed' name='pet_breed' rows='5' cols='30'>
+        {{breed}}
+      </textarea>
+      <br />
+     
+      <button type='submit' value='submit'>
+        Submit
+      </button>
+    </form>
+  </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="./Images/adoptme.webp" class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+{{!-- Pet submission form  --}}
+
+<section class="vh-100" style="background-color: #eee;">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Adoption Form</p>
+      
+                      <form class='new-pet-form'>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-4 col-form-label">🐾Pet Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control petname" id="pet_name" > 
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Pet Location</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control petlocation" id="pet_location" >
+                          </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">🐾Description</label>
+                                <textarea class="form-control petdesc" id="pet_description" rows="2"></textarea>
+                              </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾PetSize</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control petsize" id="pet_size" placeholder="S/M/L" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Age</label>
+                            <div class="col-sm-10">
+                              <input type="number" class="form-control petage" id="pet_age" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Breed</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control petbreed" id="pet_breed"  >
+                            </div>
+                          </div>
+                        <div class="form-group row">
+                          <div class="col-sm-10">
+                            <button type="submit" class="btn btn-secondary">Submit </button>
+                          </div>
+                        </div>     
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      <img src="./Images/adoptme.webp"
+                        class="img-fluid" alt="Sample image">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> 

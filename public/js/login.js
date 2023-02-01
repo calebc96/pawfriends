@@ -15,7 +15,7 @@ console.log(email, password)
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/petlist');
     } else {
       alert('Failed to log in');
     }
@@ -37,7 +37,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/petlist');
     } else {
       alert(response.statusText);
     }

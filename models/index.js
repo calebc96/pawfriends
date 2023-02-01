@@ -31,5 +31,5 @@ Picture.belongsTo(Pet, {
     foreignKey: 'pet_id'
 });
 
-module.exports = { User, Tag, Pet};
+module.exports = { User, Tag, Pet, Picture};
 

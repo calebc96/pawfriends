@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Pet, User } = require('../models');
-module.exports = router;
+
 
 router.get('/', async (req, res) => {
     try {
@@ -18,10 +18,25 @@ router.get('/', async (req, res) => {
     pets,
     logged_in: req.session.logged_in
    });
-   
-   
-   
     } catch(err) {
         res.status(500).json(err);
     }
 });
+
+// router.get('/applicationform', (req,res) => {
+//     try {
+//         res.render('applicationform');
+//     } catch(err) {
+//         res.status(500).json(err);
+//     }
+// });
+router.get('/login', async (req,res) => {
+    try {
+        res.render('signup');
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+
+
+module.exports = router;

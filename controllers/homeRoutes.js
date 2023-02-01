@@ -6,11 +6,14 @@ module.exports = router;
 
 router.get('/', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-   
+    if (req.session.logged_in) {
+        res.redirect('/petlist');
+        return;
+      }
     res.render('firstpage');
   });
   
-router.get('/homepage', withAuth, async (req, res) => {
+router.get('/petlist', withAuth, async (req, res) => {
     try {
         const petData = await Pet.findAll({
             include: [
@@ -22,7 +25,7 @@ router.get('/homepage', withAuth, async (req, res) => {
         });
 
         const pets = petData.map((pet) => pet.get({ plain: true}));
-   res.render('homepage', {
+   res.render('petlist', {
     pets,
     logged_in: req.session.logged_in
    });
@@ -35,13 +38,18 @@ router.get('/homepage', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/homepage');
+      res.redirect('/petlist');
       return;
     }
   
     res.render('login');
   });
   
+  router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+ 
+    res.render('signup');
+  });
   
 
 // router.get('/applicationform', (req,res) => {

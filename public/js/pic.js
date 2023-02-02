@@ -21,11 +21,11 @@ async function newFormHandler(event) {
       body: formData,
     });
     
-    if (response.ok) {
-      alert('pic uploaded');
-    } else {
-      alert('Failed to add pet');
-    }
+    // if (response.ok) {
+    //   alert('pic uploaded');
+    // } else {
+    //   alert('Failed to add pet');
+    // }
   }
 
   document

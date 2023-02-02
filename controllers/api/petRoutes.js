@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Pet } = require("../../models");
+const { Pet, Picture } = require("../../models");
+const FileReader = require('filereader');
 
 router.get("/", async (req, res) => {
   try {
@@ -48,17 +49,26 @@ router.delete("/:id", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const petData = await Pet.findByPk(req.params.id);
+    const petData = await Pet.findByPk(req.params.id, {
+      include: [
+        {
+          model: Picture
+        }
+      ]
+    });
 
     if (!petData) {
       res.status(404).json({ message: "No category found with this id!" });
       return;
     }
     const pet = petData.get({ plain: true });
-
-    // res.status(200).json(petData);
-    res.render("singlepet", { pet });
+    
+    //insert into img src= ""
+    const picFinal = "data:" + pet.picture.mime + ";base64," + pet.picture.pet_picture;
+    
+    res.render("singlepet", { pet, picFinal});
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 

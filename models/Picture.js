@@ -10,8 +10,12 @@ Picture.init({
         primaryKey: true,
         autoIncrement: true,
       },
+    mime: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     pet_picture: {
-        type: DataTypes.BLOB,
+        type: DataTypes.TEXT('long'),
         allowNull: false
     },
     pet_id: {
@@ -28,7 +32,7 @@ Picture.init({
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'pet',
+        modelName: 'picture',
 });
 
 module.exports = Picture;

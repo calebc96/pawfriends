@@ -1,0 +1,10 @@
+[
+    {
+      "adoption_prompt": "Example",
+      "new_pet_owner": "Example",
+      "type_of_housing": "Example",
+      "has_allergies": "No allergies",
+      "pet_id": 1,
+      "user_id": 1
+    }
+  ]

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Picture } = require('../../models');
 const fs = require('fs');
+const FileReader = require('filereader');
 
 router.get('/', async (req, res) => {
     try {
@@ -35,20 +36,25 @@ router.post('/', async (req, res) => {
         console.log(req.body);
         console.log(req.files.photo);
         
-        // const picData = await Picture.create({
-        //     pet_picture: pet_picture,
-        //     pet_id: pet_id
-        // });
-        let pic = base64_encode(req.files.photo.tempFilePath);
+        let pic = fs.readFileSync(req.files.photo.tempFilePath, 'base64');
         let mimetype = req.files.photo.mimetype;
-        console.log(pic);
-        
-        res.json(req.body);
+        const picData = await Picture.create({
+            mime: mimetype,
+            pet_picture: pic,
+            pet_id: parseInt(req.body.id)
+        });
+
+        res.status(200).json(picData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
+
+router.get('/:id', async (req, res) => {
+
+});
+
 
 router.delete('/:id', async (req, res) => {
     try {

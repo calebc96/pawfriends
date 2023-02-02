@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Pet, Picture } = require("../../models");
+const { Pet, Picture, User } = require("../../models");
 const FileReader = require('filereader');
 
 router.get("/", async (req, res) => {
@@ -54,6 +54,10 @@ router.get("/:id", async (req, res) => {
       include: [
         {
           model: Picture
+        },
+        {
+          model: User,
+          attributes: ['name', 'email', 'phone_number']
         }
       ]
     });

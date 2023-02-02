@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Pet, User } = require("../models");
+const { Pet, User, Picture } = require("../models");
 
 const withAuth = require("../utils/auth");
 module.exports = router;
@@ -30,10 +30,14 @@ router.get("/petlist", withAuth, async (req, res) => {
           model: User,
           attributes: ["name"],
         },
+        {
+          model: Picture,
+        }
       ],
     });
 
     const pets = petData.map((pet) => pet.get({ plain: true }));
+    
     res.render("petlist", {
       pets,
       logged_in: req.session.logged_in,

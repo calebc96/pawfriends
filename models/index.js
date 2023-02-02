@@ -1,35 +1,40 @@
-const User = require('./User');
-const Tag = require('./Tag');
-const Pet = require('./Pet');
-const Picture = require('./Picture');
+const User = require("./User");
+const Tag = require("./Tag");
+const Pet = require("./Pet");
+const Picture = require("./Picture");
+const Adoption = require("./Adoption");
 
 User.hasMany(Pet, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+Adoption.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 //can pet belong to two models
 Pet.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 Pet.hasMany(Tag, {
-    foreignKey: 'tag_id',
-    onDelete: 'CASCADE'
+  foreignKey: "tag_id",
+  onDelete: "CASCADE",
 });
 
 Tag.belongsTo(Pet, {
-    foreignKey: 'tag_id'
+  foreignKey: "tag_id",
 });
 
 Pet.hasOne(Picture, {
-    foreignKey: 'pet_id',
-    onDelete: 'CASCADE'
+  foreignKey: "pet_id",
+  onDelete: "CASCADE",
 });
 
 Picture.belongsTo(Pet, {
-    foreignKey: 'pet_id'
+  foreignKey: "pet_id",
 });
 
-module.exports = { User, Tag, Pet, Picture};
-
+module.exports = { User, Tag, Pet, Picture, Adoption };

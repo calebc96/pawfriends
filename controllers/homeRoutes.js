@@ -34,8 +34,8 @@ router.get("/petlist", withAuth, async (req, res) => {
   }
 });
 
+// If the user logged in, redirect the request to another route
 router.get("/login", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect("/petlist");
     return;
@@ -44,9 +44,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// To render sign up page
 router.get("/signup", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-
   res.render("signup");
 });
 
@@ -58,11 +57,16 @@ router.get("/signup", (req, res) => {
 //     }
 // });
 
+//To render firstpage
 router.get("/", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-
   res.render("firstpage");
 });
+
+//To render About us page
+router.get("/aboutus", (req,res) => {
+  res.render("aboutus");
+});
+
 
 router.get("/petlist", async (req, res) => {
   try {

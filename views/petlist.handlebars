@@ -1,21 +1,12 @@
 
-{{!-- 
-<div class="card" style="width: 50rem;margin:auto">
-  <img src="https://freight.qantas.com/images/pets/GettyImages-764782285.jpg" id="img">
-  <div class="card-body">
-    <h5 class="card-title">{{pet.name}}</h5>
-    <p class="card-text">
-      <ul>🐾Description: {{pet.description}}</ul>
-      <ul>🐾Size: {{pet.size}}</ul>
-       <ul>🐾Age: {{pet.age}}</ul>
-      <ul>🐾Breed: {{pet.breed}}</ul>
-      <ul>🐾Location:{{pet.location}}</ul>
-    </p>
-    <a href="/api/pet/{{pet.id}}" class="btn btn-primary">See Details!</a>
-  </div>
-</div> --}}
+
+{{!-- List of pets --}}
 
 {{#each pets as |pet| }}
+<div>
+    <h1 class=" display-4 " style="padding:10px;"><small>Welcome {{pet.user.name}}!</small> </h1>
+  </div> 
+
 <section style="background-color: rgb(248, 247, 247);">
             <div class="container py-2">
               <div class="row justify-content-center mb-3">

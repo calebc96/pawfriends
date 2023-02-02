@@ -1,80 +1,76 @@
-
-
-{{!-- Pet submission form  --}}
+{{!-- Pet submission form --}}
 
 <section style="background-color: #eee;">
-        <div class="container h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-              <div class="card text-black" style="border-radius: 25px;">
-                <div class="card-body p-md-5">
-                  <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Adoption Form</p>
-      
-                      <form class='new-pet-form'>
-                        <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-4 col-form-label">🐾Pet Name</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control petname" id="pet_name" > 
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputPassword3" class="col-sm-6 col-form-label">🐾Pet Location</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control petlocation" id="pet_location" >
-                          </div>
-                        </div>
-                        <div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">🐾Description</label>
-                                <textarea class="form-control petdesc" id="pet_description" rows="2"></textarea>
-                              </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾PetSize</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control petsize" id="pet_size" placeholder="S/M/L" >
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Age</label>
-                            <div class="col-sm-10">
-                              <input type="number" class="form-control petage" id="pet_age" >
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Breed</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control petbreed" id="pet_breed"  >
-                            </div>
-                          </div>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Adoption Form</p>
 
-                          <div class="form-group row">
-                            <label for="formFile" class="col-sm-6 col-form-label">🐾Upload image</label>
-                            <div class="col-sm-10">  
-                              <input class="form-control petimage" type="file" id="pet_image"></div>
-                          </div>
-
-                        <div class="form-group row">
-                          <div class="col-sm-10">
-                            <button type="submit" class="btn btn-secondary">Submit </button>
-                          </div>
-                        </div>     
-                    </div>
-                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                      <img src="images/rehome.jpg"
-                        class="img-fluid" alt="Sample image">
-                      </form>
+                <form class='new-pet-form'>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">🐾Pet Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control petname" id="pet_name">
                     </div>
                   </div>
-                </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-6 col-form-label">🐾Pet Location</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control petlocation" id="pet_location">
+                    </div>
+                  </div>
+                  <div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">🐾Description</label>
+                      <textarea class="form-control petdesc" id="pet_description" rows="2"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">🐾PetSize</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control petsize" id="pet_size" placeholder="S/M/L">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Age</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control petage" id="pet_age">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">🐾Breed</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control petbreed" id="pet_breed">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="formFile" class="col-sm-6 col-form-label">🐾Upload image</label>
+                    <div class="col-sm-10">
+                      <input class="form-control petimage" type="file" id="pet_image">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-secondary">Submit </button>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="images/rehome.jpg" class="img-fluid" alt="Sample image">
+                </form>
               </div>
             </div>
           </div>
         </div>
-      </section>  
+      </div>
+    </div>
+  </div>
+</section>
 
-       <script src="/js/form.js"></script>
-
-     
+<script src="/js/form.js"></script>

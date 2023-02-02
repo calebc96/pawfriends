@@ -13,6 +13,15 @@ router.get("/", (req, res) => {
   res.render("firstpage");
 });
 
+router.get("/home", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/petlist");
+    return;
+  }
+  res.render("firstpage");
+});
+
 router.get("/petlist", withAuth, async (req, res) => {
   try {
     const petData = await Pet.findAll({
@@ -58,9 +67,9 @@ router.get("/signup", (req, res) => {
 // });
 
 //To render firstpage
-router.get("/", (req, res) => {
-  res.render("firstpage");
-});
+// router.get("/", (req, res) => {
+//   res.render("firstpage");
+// });
 
 //To render About us page
 router.get("/aboutus", (req,res) => {

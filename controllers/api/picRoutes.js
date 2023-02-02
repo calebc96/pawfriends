@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
         const picData = await Picture.create({
             mime: mimetype,
             pet_picture: pic,
-            pet_id: 1
+            pet_id: parseInt(req.body.id)
         });
 
         res.status(200).json(picData);

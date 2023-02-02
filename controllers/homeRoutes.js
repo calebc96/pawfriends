@@ -47,6 +47,10 @@ router.get("/petlist", withAuth, async (req, res) => {
   }
 });
 
+router.get('/form', withAuth, (req, res) => {
+  res.render('petadoptionform');
+});
+
 // If the user logged in, redirect the request to another route
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {

@@ -21,8 +21,9 @@ router.post("/", async (req, res) => {
       size: req.body.size,
       age: req.body.age,
       breed: req.body.breed,
+      user_id: req.session.user_id
     });
-    res.status(200).json(petData);
+    res.status(200).json({pet_id: petData.id});
   } catch (err) {
     res.status(400).json(err);
   }

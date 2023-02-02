@@ -6,7 +6,7 @@
     "size": "large",
     "age": 3,
     "breed": "dog",
-    "tags": [1, 2, 3],
+    "tag_ids": [1, 2, 3],
     "user_id": 1
   }
 ]

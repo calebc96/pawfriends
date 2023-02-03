@@ -47,6 +47,35 @@ router.get("/petlist", withAuth, async (req, res) => {
   }
 });
 
+router.get("/profile", withAuth, async (req, res) => {
+  try {
+    const petData = await Pet.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Picture,
+        }
+      ],
+    });
+
+    const pets = petData.map((pet) => pet.get({ plain: true }));
+    console.log(pets[0].user.name);
+    res.render("profile", {
+      pets,
+      logged_in: req.session.logged_in,
+      name: pets[0].user.name
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/form', withAuth, (req, res) => {
   res.render('petadoptionform', {logged_in: req.session.logged_in});
 });

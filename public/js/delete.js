@@ -25,5 +25,9 @@ async function deleteFormHandler(event) {
     }
   }
   
-  document.querySelector('.delete-pet-form').addEventListener('click', deleteFormHandler);
+  const delButton = document.querySelector('.delete-pet-form');
+  if (delButton) {
+    delButton.addEventListener('click', deleteFormHandler);
+  }
+  
   

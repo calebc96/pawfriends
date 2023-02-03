@@ -1,8 +1,10 @@
 
 
 <div class="jumbotron">
-    <h1 class="display-4">Welcome {{name}}! </h1> 
-<h2 class="display-5">Here are your posted pets:</h2></div>
+    <h1 class="display-4">Hello, Welcome {{name}}! </h1> 
+</div>
+<h2 class="display-5 ml-4">Here are your posted pets:</h2>
+{{#if anything}}
 {{#each pets as |pet| }}
 {{!-- <div>
     <h1 class=" display-4 " style="padding:10px;"><small>Welcome {{pet.user.name}}!</small> </h1>
@@ -48,5 +50,8 @@
 </div>
 </section>
 {{/each}}
+{{else}}
+<h3 class="display-5 text-center">No posted pets</h3>
+{{/if}}
            
            

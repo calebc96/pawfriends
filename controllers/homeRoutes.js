@@ -64,13 +64,28 @@ router.get("/profile", withAuth, async (req, res) => {
       ],
     });
 
+    const username = await User.findByPk(req.session.user_id,{
+      attributes: ['name']
+    });
+    let anything;
     const pets = petData.map((pet) => pet.get({ plain: true }));
-    console.log(pets[0].user.name);
+    if ((pets.length)) {
+      anything = true;
     res.render("profile", {
       pets,
       logged_in: req.session.logged_in,
-      name: pets[0].user.name
+      name: pets[0].user.name,
+      anything: anything
     });
+    } else {
+      anything = false;
+      res.render("profile", {
+        logged_in: req.session.logged_in,
+        name: username.dataValues.name,
+        anything: anything
+      });
+    }
+    
   } catch (err) {
     res.status(500).json(err);
   }

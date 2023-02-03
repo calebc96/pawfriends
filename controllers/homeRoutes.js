@@ -13,14 +13,14 @@ router.get("/", (req, res) => {
   res.render("firstpage");
 });
 
-router.get("/home", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/petlist");
-    return;
-  }
-  res.render("firstpage");
-});
+// router.get("/home", (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect("/petlist");
+//     return;
+//   }
+//   res.render("firstpage");
+// });
 
 router.get("/petlist", withAuth, async (req, res) => {
   try {
@@ -47,8 +47,52 @@ router.get("/petlist", withAuth, async (req, res) => {
   }
 });
 
+router.get("/profile", withAuth, async (req, res) => {
+  try {
+    const petData = await Pet.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Picture,
+        }
+      ],
+    });
+
+    const username = await User.findByPk(req.session.user_id,{
+      attributes: ['name']
+    });
+    let anything;
+    const pets = petData.map((pet) => pet.get({ plain: true }));
+    if ((pets.length)) {
+      anything = true;
+    res.render("profile", {
+      pets,
+      logged_in: req.session.logged_in,
+      name: pets[0].user.name,
+      anything: anything
+    });
+    } else {
+      anything = false;
+      res.render("profile", {
+        logged_in: req.session.logged_in,
+        name: username.dataValues.name,
+        anything: anything
+      });
+    }
+    
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/form', withAuth, (req, res) => {
-  res.render('petadoptionform');
+  res.render('petadoptionform', {logged_in: req.session.logged_in});
 });
 
 // If the user logged in, redirect the request to another route
@@ -81,7 +125,7 @@ router.get("/signup", (req, res) => {
 
 //To render About us page
 router.get("/aboutus", (req,res) => {
-  res.render("aboutus");
+  res.render("aboutus", {logged_in: req.session.logged_in});
 });
 
 

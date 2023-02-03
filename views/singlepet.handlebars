@@ -1,75 +1,62 @@
 {{!-- <div>
-<div class="card" style="width: 50rem;margin:auto;">
-  <img src={{picFinal}} id="img"> --}}
-  {{!-- <div class="card-body">
-    <h5 class="card-title">
-        <ul>{{pet.name}}</ul></h5>
-    <p class="card-text">
-
-    
-    <li> Size: {{pet.size}}</li>
-    <li> Age: {{pet.age}}</li>
-    <li> Breed: {{pet.breed}}</li>
-    <li> Location: {{pet.location}}</li>
+  <div class="card" style="width: 50rem;margin:auto;">
+    <img src={{picFinal}} id="img"> --}}
+    {{!-- <div class="card-body">
+      <h5 class="card-title">
+        <ul>{{pet.name}}</ul>
+      </h5>
+      <p class="card-text">
+        <li> Size: {{pet.size}}</li>
+        <li> Age: {{pet.age}}</li>
+        <li> Breed: {{pet.breed}}</li>
+        <li> Location: {{pet.location}}</li>
       <p>
-        Description: 
-        <ul>{{pet.description}}</ul>
-    </p>
-    <h5>Current Owner: {{pet.user.name}}</h5>
-    <h5>Email: {{pet.user.email}}</h5>
-    <h5>Phone Number: {{pet.user.phone_number}}</h5>
-   </div>
-</div>
-</div>  --}}
+        Description:
+      <ul>{{pet.description}}</ul>
+      </p>
+      <h5>Current Owner: {{pet.user.name}}</h5>
+      <h5>Email: {{pet.user.email}}</h5>
+      <h5>Phone Number: {{pet.user.phone_number}}</h5>
+    </div>
+  </div>
+</div> --}}
 
 
- <div class="container py-2">
-       
-        <!-- Card Start -->
-        <div class="card">
-          <div class="row ">
-            <div class="col-md-7">
-              <div class="card-block">
-                <div class="p-3 text-black text-center" style="background-color: #eff1f2;">
-                  <h5 class="mb-0">{{pet.name}}</h5>
-                </div>
-                <div class="d-flex flex-column text-center">
-                  <ul class="list-unstyled mb-0">
-                    <span class="h4 mb-0">{{pet.age}}</span>
-                    <li class="small">Age</li>
-                    <li aria-hidden="true">—</li>
-                    <span class="h4 mb-0">{{pet.breed}}</span>
-                    <li class="small">Breed</li>
-                    <li aria-hidden="true">—</li>
-                    <span class="h4 mb-0">{{pet.size}}</span>
-                    <li class="small">Size</li>
-                    <li aria-hidden="true">—</li>
-                    <span class="h4 mb-0">{{pet.location}}</span>
-                    <li class="small">Location</li>
-                    <li aria-hidden="true">—</li>
-                    <li>{{pet.description}}</li>
-                    <li aria-hidden="true">—</li>
-                   
-                     <div class="p-3 text-black text-center" style="background-color: #eff1f2;">
-                       <span class="h4 mb-0">Owner Details</span>
-                    <li>{{pet.user.name}}</li>
-                    
-                     <li><i style="font-size:24px" class="fa">&#xf0e0;</i> {{pet.user.email}}</li> 
-                        <li><i style="font-size:24px" class="fa">&#xf095;</i> {{pet.user.phone_number}}</li>
-                  
-     
-     </div>
-                  </ul>
-                </div>                               
+<div class="container py-2">
+  <!-- Card Start -->
+  <div class="card">
+    <div class="row ">
+      <div class="col-md-7">
+        <div class="card-block">
+          <div class="p-3 text-black text-center" style="background-color: #eff1f2;">
+            <h5 class="mb-0">{{pet.name}}</h5>
+          </div>
+          <div class="d-flex flex-column text-center">
+            <ul class="list-unstyled mb-0">
+              <span class="h4 mb-0">{{pet.age}}</span>
+              <li class="small">Age</li>
+              <li aria-hidden="true">—</li>
+              <span class="h4 mb-0">{{pet.breed}}</span>
+              <li class="small">Breed</li>
+              <li aria-hidden="true">—</li>
+              <span class="h4 mb-0">{{pet.size}}</span>
+              <li class="small">Size</li>
+              <li aria-hidden="true">—</li>
+              <span class="h4 mb-0">{{pet.location}}</span>
+              <li class="small">Location</li>
+              <li aria-hidden="true">—</li>
+              <li>{{pet.description}}</li>
+              <li aria-hidden="true">—</li>
+              <div class="p-3 text-black text-center" style="background-color: #eff1f2;">
+                <span class="h4 mb-0">Owner Details</span>
+                <li>{{pet.user.name}}</li>
+                <li><i style="font-size:24px" class="fa">&#xf0e0;</i> {{pet.user.email}}</li>
+                <li><i style="font-size:24px" class="fa">&#xf095;</i> {{pet.user.phone_number}}</li>
               </div>
-            </div>
-           
-            <div class="col-md-5">                      
-            
-                      <img src={{picFinal}} class="card-img-top h-100" alt="petimage">
-                  </div>        
+            </ul>
           </div>
         </div>
+
         {{#if idEqual}}
         <form class = 'delete-pet-form'> 
            <button type="submit" class="btn btn-secondary"  value="submit">Delete 
@@ -79,66 +66,60 @@
         </form>
         {{/if}}
       
+
       </div>
+      <div class="col-md-5">
+        <img src={{picFinal}} class="card-img-top h-100" alt="petimage">
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="/js/delete.js"></script>
 
 
 
-{{!-- <section style="background-color: #eee;" >
-            <div class="container py-5" style="width:40rem;">
-                <div class="align-self-center" >
-                  <div class="card text-black">
-                    <img src={{picFinal}}
-                      class="card-img-top" alt="iPhone" />
-                    <div class="card-body">
-                
-          
-                      <div class="text-center">
-                        <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
-                          <h5 class="mb-0">{{pet.name}}</h5>
-                        </div>
-          
-                        <div class="d-flex flex-column mb-4">
-                          <span class="h1 mb-0">{{pet.age}}</span>
-                          <span>Age</span>
-                      
-                          <ul class="list-unstyled mb-0">
-                            <li aria-hidden="true">—</li>
-                            <span class="h2 mb-0">{{pet.size}}</span>
-                            <li>Size</li>
-                            <li aria-hidden="true">—</li>
-                             <span class="h2 mb-0">{{pet.breed}}</span>
-                            <li>Breed</li>
-                            <li aria-hidden="true">—</li>
-                            <span class="h2 mb-0">{{pet.location}}</span>
-                            <li>Location</li>
-                           
-                         
-                          </ul>
-                         
-                          
-                        </div>
-          
-                        <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
-                          <h5 class="mb-0">{{pet.description}}</h5>
-                        </div>
-          
-                        <div class="d-flex flex-column mb-4 lead">
-                          <span class="mb-2">Current Owner: {{pet.user.name}}</span>
-                          <span class="mb-2"><i style="font-size:24px" class="fa">&#xf0e0;</i> {{pet.user.email}}</span>
-                          <span class="mb-2"><i style="font-size:24px" class="fa">&#xf095;</i> {{pet.user.phone_number}}</span>
-                          <span style="color: transparent;">0</span>
-                        </div>
-                      </div>
-          
-                    </div>
-                  </div>
-                </div>
-             
-                    </div>
-                  </div>
-                </div>
-              </div>
+{{!-- <section style="background-color: #eee;">
+  <div class="container py-5" style="width:40rem;">
+    <div class="align-self-center">
+      <div class="card text-black">
+        <img src={{picFinal}} class="card-img-top" alt="iPhone" />
+        <div class="card-body">
+          <div class="text-center">
+            <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
+              <h5 class="mb-0">{{pet.name}}</h5>
             </div>
-          </section> --}}
+            <div class="d-flex flex-column mb-4">
+              <span class="h1 mb-0">{{pet.age}}</span>
+              <span>Age</span>
+              <ul class="list-unstyled mb-0">
+                <li aria-hidden="true">—</li>
+                <span class="h2 mb-0">{{pet.size}}</span>
+                <li>Size</li>
+                <li aria-hidden="true">—</li>
+                <span class="h2 mb-0">{{pet.breed}}</span>
+                <li>Breed</li>
+                <li aria-hidden="true">—</li>
+                <span class="h2 mb-0">{{pet.location}}</span>
+                <li>Location</li>
+              </ul>
+            </div>
+            <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
+              <h5 class="mb-0">{{pet.description}}</h5>
+            </div>
+            <div class="d-flex flex-column mb-4 lead">
+              <span class="mb-2">Current Owner: {{pet.user.name}}</span>
+              <span class="mb-2"><i style="font-size:24px" class="fa">&#xf0e0;</i> {{pet.user.email}}</span>
+              <span class="mb-2"><i style="font-size:24px" class="fa">&#xf095;</i> {{pet.user.phone_number}}</span>
+              <span style="color: transparent;">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section> --}}

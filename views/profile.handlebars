@@ -1,11 +1,57 @@
-{{!-- Once logged in render this page --}}
+
 
 <div class="jumbotron">
-    <h1 class="display-4">Hello, Welcome {{name}}! </h1>
-    {{!-- <p class="lead">Here is our pets!</p> --}}
-    {{!-- <p class="lead">Would you like to post your pet for adoption? </p> --}}
-  </div>
+    <h1 class="display-4">Hello, Welcome {{name}}! </h1> 
+</div>
+<h2 class="display-5 ml-4">Here are your posted pets:</h2>
+{{#if anything}}
+{{#each pets as |pet| }}
+{{!-- <div>
+    <h1 class=" display-4 " style="padding:10px;"><small>Welcome {{pet.user.name}}!</small> </h1>
+  </div>  --}}
 
-
+<section style="background-color: rgb(248, 247, 247);">
+            <div class="container py-2">
+              <div class="row justify-content-center mb-3">
+                <div class="col-md-12 col-xl-10">
+                  <div class="card shadow-0 border rounded-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                          <div class="bg-image  ripple rounded ripple-surface">
+                            <img src="data:{{pet.picture.mime}};base64,{{pet.picture.pet_picture}}"
+                              class="w-100" />
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                          <h5>{{pet.name}}</h5>
+                          <div class="mb-2 text-muted small">
+                            <span>{{pet.location}}</span>
+                          </div>
+                          <div class="mb-2 text-muted small">
+                            <span>{{pet.breed}}</span>
+                            </div>
+                          <p class="text-truncate mb-4 mb-md-0">
+                           {{pet.description}}
+                          </p>
+                        </div>
+                        <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                         
+                          <h6 class="text-dark">Want to know more about me?</h6>
+                          <div class="d-flex flex-column mt-4">
+                            <a href="/api/pet/{{pet.id}}"><button class="btn btn-secondary btn-sm" type="button">Details</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</div>
+</section>
+{{/each}}
+{{else}}
+<h3 class="display-5 text-center">No posted pets</h3>
+{{/if}}
            
            

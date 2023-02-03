@@ -72,7 +72,9 @@ router.get("/:id", async (req, res) => {
     const picFinal = "data:" + pet.picture.mime + ";base64," + pet.picture.pet_picture;
     let idEqual = req.session.user_id == pet.user_id;
     
-    res.render("singlepet", { pet, picFinal, idEqual:idEqual});
+
+    res.render("singlepet", { pet, picFinal, idEqual:idEqual, logged_in: req.session.logged_in});
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

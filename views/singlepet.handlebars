@@ -56,6 +56,17 @@
             </ul>
           </div>
         </div>
+
+        {{#if idEqual}}
+        <form class = 'delete-pet-form'> 
+           <button type="submit" class="btn btn-secondary"  value="submit">Delete 
+
+           </button>
+
+        </form>
+        {{/if}}
+      
+
       </div>
       <div class="col-md-5">
         <img src={{picFinal}} class="card-img-top h-100" alt="petimage">
@@ -63,6 +74,8 @@
     </div>
   </div>
 </div>
+
+<script src="/js/delete.js"></script>
 
 
 

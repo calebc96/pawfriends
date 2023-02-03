@@ -57,7 +57,7 @@ router.get("/:id", async (req, res) => {
         },
         {
           model: User,
-          attributes: ['name', 'email', 'phone_number']
+          attributes: ['id','name', 'email', 'phone_number']
         }
       ]
     });
@@ -70,8 +70,11 @@ router.get("/:id", async (req, res) => {
     
     //insert into img src= ""
     const picFinal = "data:" + pet.picture.mime + ";base64," + pet.picture.pet_picture;
+    let idEqual = req.session.user_id == pet.user_id;
     
-    res.render("singlepet", { pet, picFinal, logged_in: req.session.logged_in});
+
+    res.render("singlepet", { pet, picFinal, idEqual:idEqual, logged_in: req.session.logged_in});
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

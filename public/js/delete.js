@@ -3,18 +3,15 @@ async function deleteFormHandler(event) {
    
     
    
-    
     const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
-  
+        window.location.toString().split('/').length - 1
+      ];
+  console.log(id);
 
   
-    const response = await fetch(`/api/dish/${id}`, {
-      method: 'DELETE',
-      body: JSON.stringify({
-        id
-      }),
+    const response = await fetch(`/api/pet/${id}`, {
+      method: 'delete',
+     
       headers: {
         'Content-Type': 'application/json',
       },
@@ -28,5 +25,5 @@ async function deleteFormHandler(event) {
     }
   }
   
-  document.querySelector('.delete-pet-form').addEventListener('submit', deleteFormHandler);
+  document.querySelector('.delete-pet-form').addEventListener('click', deleteFormHandler);
   

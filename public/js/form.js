@@ -12,7 +12,7 @@ async function newFormHandler(event) {
     const id = window.location.toString().split('/')[5];
 console.log(id);
     
-   if (name && location && description && size && age && breed && photo) {
+   if (name && location && description && size && age && breed && photo.length) {
     const response = await fetch(`/api/pet`, {
       method: 'POST',
       body: JSON.stringify({

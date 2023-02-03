@@ -3,11 +3,11 @@
 <div class="jumbotron">
     <h1 class="display-4">Welcome {{name}}! </h1> 
 <h2 class="display-5">Here are your posted pets:</h2></div>
+{{#if anything}}
 {{#each pets as |pet| }}
 {{!-- <div>
     <h1 class=" display-4 " style="padding:10px;"><small>Welcome {{pet.user.name}}!</small> </h1>
   </div>  --}}
-
 <section style="background-color: rgb(248, 247, 247);">
             <div class="container py-2">
               <div class="row justify-content-center mb-3">

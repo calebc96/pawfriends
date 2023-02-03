@@ -13,14 +13,14 @@ router.get("/", (req, res) => {
   res.render("firstpage");
 });
 
-router.get("/home", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/petlist");
-    return;
-  }
-  res.render("firstpage");
-});
+// router.get("/home", (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect("/petlist");
+//     return;
+//   }
+//   res.render("firstpage");
+// });
 
 router.get("/petlist", withAuth, async (req, res) => {
   try {
@@ -48,7 +48,7 @@ router.get("/petlist", withAuth, async (req, res) => {
 });
 
 router.get('/form', withAuth, (req, res) => {
-  res.render('petadoptionform');
+  res.render('petadoptionform', {logged_in: req.session.logged_in});
 });
 
 // If the user logged in, redirect the request to another route
@@ -81,7 +81,7 @@ router.get("/signup", (req, res) => {
 
 //To render About us page
 router.get("/aboutus", (req,res) => {
-  res.render("aboutus");
+  res.render("aboutus", {logged_in: req.session.logged_in});
 });
 
 

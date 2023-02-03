@@ -8,6 +8,9 @@ async function newFormHandler(event) {
     const breed = document.querySelector('#pet_breed').value;
     let photo = document.getElementById("pet_image").files[0];
     let formData = new FormData();
+
+    const id = window.location.toString().split('/')[5];
+console.log(id);
     
    
     const response = await fetch(`/api/pet`, {

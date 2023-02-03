@@ -71,7 +71,7 @@ router.get("/:id", async (req, res) => {
     //insert into img src= ""
     const picFinal = "data:" + pet.picture.mime + ";base64," + pet.picture.pet_picture;
     
-    res.render("singlepet", { pet, picFinal, logged_in: res.session.logged_in});
+    res.render("singlepet", { pet, picFinal, logged_in: req.session.logged_in});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -2,13 +2,14 @@
   "name": "project-2",
   "version": "1.0.0",
   "engines": {
-    "node": "12.11.1"
+    "node": "12.11.1",
+    "npm": "1.4.29"
   },
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "make test",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
